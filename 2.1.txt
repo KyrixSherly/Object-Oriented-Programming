@@ -1,0 +1,39 @@
+jshell> void sayHello(){
+   ...> System.out.println("hello");
+   ...> }
+|  created method sayHello()
+
+jshell> sayHello()
+hello
+
+jshell> class Hello{
+   ...> void sayHello(){
+   ...> System.out.println("hello");
+   ...> }
+   ...> }
+|  created class Hello
+
+jshell> new Hello();
+$4 ==> Hello@235b8e
+
+jshell> Hello h=new Hello();
+h ==> Hello@bca1e0
+
+jshell> h.sayHello();
+hello
+
+jshell> class Hello{
+   ...> String toWhom = "world";
+   ...> Hello(){}
+   ...> void sayHello(){
+   ...> System.out.println("hello "+toWhom);
+   ...> }
+   ...> }
+|  replaced class Hello
+|    update replaced variable h, reset to null
+
+jshell> Hello h=new Hello();
+h ==> Hello@10736d9
+
+jshell> h.sayHello();
+hello world

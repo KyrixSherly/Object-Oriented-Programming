@@ -1,0 +1,33 @@
+jshell> class Subway{
+   ...> int line;
+   ...> void run(){
+   ...> System.out.println(line + " line runs");
+   ...> }
+   ...> }
+|  created class Subway
+
+jshell> Subway mySub= new Subway();
+mySub ==> Subway@12948e2
+
+jshell> mySub.run()
+0 line runs
+
+jshell> class Subway{
+   ...> int line;
+   ...> void run(){
+   ...> System.out.println(line+ " line runs");
+   ...> }
+   ...> void setLine(int l){
+   ...> line=l;
+   ...> }
+   ...> }
+|  replaced class Subway
+|    update replaced variable mySub, reset to null
+
+jshell> Subway mySub=new Subway();
+mySub ==> Subway@149cea0
+
+jshell> mySub.setLine(6)
+
+jshell> mySub.run()
+6 line runs
