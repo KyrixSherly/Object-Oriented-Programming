@@ -1,0 +1,59 @@
+jshell> class Person{
+   ...> private float weight;
+   ...> public void setWeight(float w){
+   ...> this.weight = w;
+   ...> }
+   ...> public float getWeight() {
+   ...> return weight;
+   ...> }
+   ...> }
+|  created class Person
+
+jshell> Person me=new Person();
+me ==> Person@1c6f14e
+
+jshell> me.setWeight(60.0);
+|  Error:
+|  incompatible types: possible lossy conversion from double to float
+|  me.setWeight(60.0);
+|               ^--^
+
+jshell> me.setWeight((float)60.0);
+
+jshell> System.out.println(me.weight);
+|  Error:
+|  weight has private access in Person
+|  System.out.println(me.weight);
+|                     ^-------^
+
+
+jshell> Person me=new Person();
+me ==> Person@32be31
+
+jshell> me.setWeight((float)60.0);
+
+jshell> System.out.println(me.getWeight());
+60.0
+
+jshell> class Person{
+   ...> private float weight;
+   ...> public void setWeight(float w){
+   ...> this.weight=w;
+   ...> }
+   ...> private float getWeight(){
+   ...> return weight;
+   ...> }
+   ...> }
+|  replaced class Person
+|    update replaced variable me, reset to null
+
+jshell> Person me=new Person();
+me ==> Person@3708b3
+
+jshell> me.setWeight((float)60.0);
+
+jshell> System.out.println(me.getWeight());
+|  Error:
+|  getWeight() has private access in Person
+|  System.out.println(me.getWeight());
+|                     ^----------^
