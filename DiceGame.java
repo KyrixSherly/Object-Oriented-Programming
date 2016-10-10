@@ -1,19 +1,19 @@
 jshell> class DiceGame{
-   ...> private Player p1;
-   ...> private Player p2;
+   ...> private Player a1;
+   ...> private Player a2;
    ...> public void startGame(){
-   ...> p1=new Player("chulsoo");
-   ...> p2=new Player("youngsoo");
-   ...> p1.play();
-   ...> p2.play();
-   ...> if(p1.getNum() > p2.getNum()) {
-   ...> System.out.println(p1.getName()+ " win");
+   ...> a1=new Player("chulsoo");
+   ...> a2=new Player("youngsoo");
+   ...> a1.play();
+   ...> a2.play();
+   ...> if(a1.getNum() > a2.getNum()) {
+   ...> System.out.println(a1.getName()+ " win");
    ...> }
-   ...> else if (p1.getNum()==p2.getNum()){
+   ...> else if (a1.getNum()==a2.getNum()){
    ...> System.out.println(" draw");
    ...> }
    ...> else {
-   ...> System.out.println(p2.getName() + " win");
+   ...> System.out.println(a2.getName() + " win");
    ...> }
    ...> }
    ...> }
