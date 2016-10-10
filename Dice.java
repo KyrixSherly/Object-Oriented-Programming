@@ -3,7 +3,7 @@
  private int number=0;
  public void roll(){
    number = (int) (Math.random()*6);
-   System.out.println("Turns on "+number);
+   System.out.println("It's "+number);
  }
  public int getNum() {
    return this.number;
